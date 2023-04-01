@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.js"
+      integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h1>Prueba de la llamada a JQuery</h1>
+    <script>
+      // Colocamos un script para hacer una llamada al endpoint
+      $.ajax({
+        type: "POST", // Aqui especificamos el método POST
+        url: "/personJson", //Aqui sera del endpoint
+        data: JSON.stringify({ Nombre: "Juan", Apellido: "Parra" }), // Convertirmos a estring pero en Json y colocamos los datos en este caso Juan Parra
+        dataType: "json", // Colocamos el tipo de dato de respuesta en el server
+        contentType: "application/json", // Colocamos el tipo de dato en el que se va a enviar, en este caso sera Json
+      });
+    </script>
+  </body>
+</html>
